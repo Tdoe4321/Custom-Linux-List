@@ -51,4 +51,6 @@ bash
 ```
 
 ### .bashrc additions
+```
 alias df="du -sh *" | #Shows file size for all files and folders in current directory
+```
