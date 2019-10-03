@@ -58,7 +58,9 @@ alias df="du -sh *" | #Shows file size for all files and folders in current dire
 ### Git stuff
 The aliases below are useful for Git commands.  Note that these must be implemented in your .gitconfig file (likely located in your home directory).
 
+```bash
 [alias]
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=iso
     histf = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=iso --name-status
     histc = log --graph --pretty=oneline --abbrev-commit
+```
