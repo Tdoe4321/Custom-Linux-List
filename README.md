@@ -3,14 +3,14 @@ A list of personal customization items that I like for Linux
 
 ### Useful Programs
 **Changing rm to move things to a trashcan**
-```
+```bash
 sudo apt-get install trash-cli
 sudo vim /usr/local/bin/trash-rm
 ```
 
 paste the following in that new file:
 
-```
+```bash
 #!/bin/bash
 # command name: trash-rm
 shopt -s extglob
@@ -44,15 +44,22 @@ done
 trash-put "${cmd[@]}"
 ```
 
-```
+```bash
 sudo chmod +x /usr/local/bin/trash-rm
 echo 'alias rm="trash-rm"' >> ~/.bashrc
 bash
 ```
 
 ### .bashrc additions
+merges all commands (from all terminals) immediatly into ~/.bash_history but keeps individual 'up' history individual
+```bash
+shopt -s histappend
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 ```
-alias df="du -sh *" | #Shows file size for all files and folders in current directory
+
+Shows file size for all files and folders in current directory
+```bash
+alias df="du -sh *"
 ```
 
 ### Git stuff
