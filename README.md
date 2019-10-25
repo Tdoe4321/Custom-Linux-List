@@ -62,6 +62,18 @@ Shows file size for all files and folders in current directory
 alias df="du -sh *"
 ```
 
+### .vimrc additions
+Much like how we have a .bashrc that is executed when a new bash shell is instanciated, we have a .vimrc that is executed when we open a file in vim. However, this file may not exist when you install vim. If it doesn't, you will need to add it to your home directory:
+```bash
+touch ~/.vimrc
+```
+
+Show line numbers:
+```bash
+set nu
+```
+
+
 ### Git stuff
 The aliases below are useful for Git commands.  Note that these must be implemented in your .gitconfig file (likely located in your home directory).
 
