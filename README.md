@@ -54,7 +54,7 @@ echo 'alias rm="trash-rm"' >> ~/.bashrc
 ### .bashrc additions
 merges all commands (from all terminals) immediatly into ~/.bash_history but keeps individual 'up' history individual
 ```bash
-# Merges all terminal history into ~/.bas_history
+# Merges all terminal history into ~/.bash_history
 shopt -s histappend
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 ```
