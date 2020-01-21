@@ -75,6 +75,13 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 ```
+# Shows current branch
+```bash
+parse_git_branch() {
+ git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\] $(parse_git_branch)\[\033[00m\]\$ '
+```
 
 ### .vimrc additions
 Much like how we have a .bashrc that is executed when a new bash shell is instanciated, we have a .vimrc that is executed when we open a file in vim. However, this file may not exist when you install vim. If it doesn't, you will need to add it to your home directory:
