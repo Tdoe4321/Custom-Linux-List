@@ -46,23 +46,27 @@ trash-put "${cmd[@]}"
 
 ```bash
 sudo chmod +x /usr/local/bin/trash-rm
-echo '# '
+echo ' ' >> ~/.bashrc
+echo '# Changes rm to go to trashcan, not delete forever' >> ~/.bashrc
 echo 'alias rm="trash-rm"' >> ~/.bashrc
 ```
 
 ### .bashrc additions
 merges all commands (from all terminals) immediatly into ~/.bash_history but keeps individual 'up' history individual
 ```bash
+# Merges all terminal history into ~/.bas_history
 shopt -s histappend
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 ```
 
 Shows file size for all files and folders in current directory
 ```bash
+# Shows file size
 alias df="du -sh *"
 ```
 Colors man pages nicely:
 ```bash
+# Pretty man colors
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;31m'
 export LESS_TERMCAP_me=$'\E[0m'
