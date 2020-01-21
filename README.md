@@ -45,9 +45,9 @@ trash-put "${cmd[@]}"
 ```
 
 ```bash
-sudo chmod +x /usr/local/bin/trash-rm
-echo ' ' >> ~/.bashrc
-echo '# Changes rm to go to trashcan, not delete forever' >> ~/.bashrc
+sudo chmod +x /usr/local/bin/trash-rm && \
+echo ' ' >> ~/.bashrc && \
+echo '# Changes rm to go to trashcan, not delete forever' >> ~/.bashrc && \
 echo 'alias rm="trash-rm"' >> ~/.bashrc
 ```
 
