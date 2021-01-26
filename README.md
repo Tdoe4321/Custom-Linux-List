@@ -64,6 +64,12 @@ Shows file size for all files and folders in current directory
 # Shows file size
 alias df="du -sh *"
 ```
+
+Git status alias
+```bash
+alias gits="git status"
+```
+
 Colors man pages nicely:
 ```bash
 # Pretty man colors
