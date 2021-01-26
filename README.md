@@ -67,6 +67,7 @@ alias df="du -sh *"
 
 Git status alias
 ```bash
+# Git status alias
 alias gits="git status"
 ```
 
