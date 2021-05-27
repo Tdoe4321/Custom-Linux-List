@@ -135,7 +135,6 @@ Add to keybindings.json & install required extensions
                 "clever.maximize.toggleWithoutSidebar"
             ]
         },
-        "when": "editorTextFocus"  // if you want this, you probably do
     },
     {
         "key": "ctrl+shift+x",
