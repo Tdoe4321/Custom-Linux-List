@@ -111,3 +111,92 @@ The aliases below are useful for Git commands.  Note that these must be implemen
     histf = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=iso --name-status
     histc = log --graph --pretty=oneline --abbrev-commit
 ```
+
+### VS Code Keybindings
+Add to keybindings.json & install required extensions
+```
+[
+    // Switch between terminal tabs
+    { "key": "alt+[ArrowDown]", "command": "workbench.action.terminal.focusNext", "when": "terminalFocus" },
+    { "key": "alt+[ArrowUp]", "command": "workbench.action.terminal.focusPrevious", "when": "terminalFocus" },
+    
+    // Close terminal tab
+    { "key": "ctrl+w", "command": "workbench.action.terminal.kill", "when": "terminalIsOpen && terminalFocus || terminalProcessSupported && terminalFocus" },
+    
+    // Fullscreen current code tab + remove terminal
+    // REQUIRES multicommand and clever extensions
+    // ALSO: remove default ctrl+shift+x: File->Preferences->Keyboard Shortcuts
+    {
+        "key": "ctrl+shift+x",
+        "command": "extension.multiCommand.execute",
+        "args": {
+            "sequence": [
+                "workbench.action.togglePanel",
+                "clever.maximize.toggleWithoutSidebar"
+            ]
+        },
+        "when": "editorTextFocus"  // if you want this, you probably do
+    },
+    {
+        "key": "ctrl+shift+x",
+        "command": "-workbench.view.extensions",
+        "when": "viewContainer.workbench.view.extensions.enabled"
+    },
+    { "key": "ctrl+shift+z", "command": "workbench.action.togglePanel"},
+    
+    // Send Current tab to second view
+    { "key": "alt+shift+o", "command": "workbench.action.moveEditorToNextGroup", "when": "editorFocus" },
+    
+    // Send Current tab to first view
+    { "key": "alt+shift+i", "command": "workbench.action.moveEditorToPreviousGroup", "when": "editorFocus" },
+
+    // Switch between open tabs in current group
+    {
+        "key": "alt+[ArrowRight]",
+        "command": "workbench.action.nextEditor", "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+[ArrowLeft]",
+        "command": "workbench.action.previousEditor", "when": "editorTextFocus"
+    },
+
+    // Move tabs in order
+    {
+        "key": "alt+shift+[ArrowRight]",
+        "command": "workbench.action.moveEditorRightInGroup", "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+shift+[ArrowLeft]",
+        "command": "workbench.action.moveEditorLeftInGroup", "when": "editorTextFocus"
+    },
+
+
+    // Page down/up on ctrl+shift+down/up
+    {
+        "key": "ctrl+shift+up",
+        "command": "cursorMove",
+        "args": {
+            "to": "up",
+            "by": "line",
+            "value": 10
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+down",
+        "command": "cursorMove",
+        "args": {
+            "to": "down",
+            "by": "line",
+            "value": 10
+        },
+        "when": "editorTextFocus"
+    },
+    
+    // Jump between terminal and text editor
+    { "key": "alt+v", "command": "workbench.action.terminal.focus", "when": "editorTextFocus"},
+    { "key": "alt+v", "command": "workbench.action.focusActiveEditorGroup", "when": "terminalFocus"},
+    
+
+]
+```
