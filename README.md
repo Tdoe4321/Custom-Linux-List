@@ -194,8 +194,8 @@ Add to keybindings.json & install required extensions
     },
     
     // Jump between terminal and text editor
-    { "key": "alt+v", "command": "workbench.action.terminal.focus", "when": "editorTextFocus"},
-    { "key": "alt+v", "command": "workbench.action.focusActiveEditorGroup", "when": "terminalFocus"},
+    { "key": "alt+z", "command": "workbench.action.terminal.focus", "when": "editorTextFocus"},
+    { "key": "alt+z", "command": "workbench.action.focusActiveEditorGroup", "when": "terminalFocus"},
     
 
 ]
