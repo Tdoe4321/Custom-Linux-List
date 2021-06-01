@@ -115,6 +115,7 @@ The aliases below are useful for Git commands.  Note that these must be implemen
 ### VS Code Keybindings
 Add to keybindings.json & install required extensions
 ```
+// Place your key bindings in this file to override the defaults
 [
     // Switch between terminal tabs
     { "key": "alt+[ArrowDown]", "command": "workbench.action.terminal.focusNext", "when": "terminalFocus" },
@@ -131,7 +132,6 @@ Add to keybindings.json & install required extensions
         "command": "extension.multiCommand.execute",
         "args": {
             "sequence": [
-                "workbench.action.togglePanel",
                 "clever.maximize.toggleWithoutSidebar"
             ]
         },
@@ -196,6 +196,17 @@ Add to keybindings.json & install required extensions
     { "key": "alt+z", "command": "workbench.action.terminal.focus", "when": "editorTextFocus"},
     { "key": "alt+z", "command": "workbench.action.focusActiveEditorGroup", "when": "terminalFocus"},
     
+    // Keyboard navigate backwards and forwards
+    {
+        "key": "ctrl+shift+a",
+        "command": "workbench.action.navigateBack",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+s",
+        "command": "workbench.action.navigateForward",
+        "when": "editorTextFocus"
+    }
 
 ]
 ```
