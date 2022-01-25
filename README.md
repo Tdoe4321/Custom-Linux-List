@@ -210,3 +210,11 @@ Add to keybindings.json & install required extensions
 
 ]
 ```
+
+To allow the ctrl+b sidebar command to work while the focus is in the terminal, use the following:
+Search for terminal profile in settings -> "edit in settings.json" for windows. Add the following:
+```
+"terminal.integrated.commandsToSkipShell": [
+        "workbench.action.toggleSidebarVisibility"
+]
+```
