@@ -144,10 +144,10 @@ Add to keybindings.json & install required extensions
     { "key": "ctrl+shift+z", "command": "workbench.action.togglePanel"},
     
     // Send Current tab to second view
-    { "key": "alt+shift+o", "command": "workbench.action.moveEditorToNextGroup", "when": "editorFocus" },
+    { "key": "ctrl+shift+o", "command": "workbench.action.moveEditorToNextGroup", "when": "editorFocus" },
     
     // Send Current tab to first view
-    { "key": "alt+shift+i", "command": "workbench.action.moveEditorToPreviousGroup", "when": "editorFocus" },
+    { "key": "ctrl+shift+i", "command": "workbench.action.moveEditorToPreviousGroup", "when": "editorFocus" },
 
     // Switch between open tabs in current group
     {
