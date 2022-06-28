@@ -144,10 +144,10 @@ Add to keybindings.json & install required extensions
     { "key": "ctrl+shift+z", "command": "workbench.action.togglePanel"},
     
     // Send Current tab to second view
-    { "key": "ctrl+shift+o", "command": "workbench.action.moveEditorToNextGroup", "when": "editorFocus" },
+    { "key": "ctrl+shift+e", "command": "workbench.action.moveEditorToNextGroup", "when": "editorFocus" },
     
     // Send Current tab to first view
-    { "key": "ctrl+shift+i", "command": "workbench.action.moveEditorToPreviousGroup", "when": "editorFocus" },
+    { "key": "ctrl+shift+r", "command": "workbench.action.moveEditorToPreviousGroup", "when": "editorFocus" },
 
     // Switch between open tabs in current group
     {
@@ -210,7 +210,7 @@ Add to keybindings.json & install required extensions
     
     // Terminal commandd
     {   // Split terminal view
-        "key": "ctrl+shift+o",
+        "key": "ctrl+shift+e",
         "command": "workbench.action.terminal.split",
         "when": "terminalFocus && terminalProcessSupported || terminalFocus && terminalWebExtensionContributedProfile"
     },
@@ -251,4 +251,10 @@ Search for terminal profile in settings -> "edit in settings.json" for windows. 
 "terminal.integrated.commandsToSkipShell": [
         "workbench.action.toggleSidebarVisibility"
 ]
+```
+
+To allow alt not to be used for top bar navigation, search for 'settings' and 'Open Default Preferences' should come up. Add the following:
+```
+"window.titleBarStyle": "custom",
+"window.customMenuBarAltFocus": false
 ```
