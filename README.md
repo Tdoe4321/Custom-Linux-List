@@ -73,7 +73,6 @@ cl () {
     then
         VAL=~
     fi  
-    echo $VAL 
     cd "$VAL" && shift && ls
 }
 ```
