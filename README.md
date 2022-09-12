@@ -65,6 +65,19 @@ Shows file size for all files and folders in current directory
 alias df="du -sh *"
 ```
 
+`cd` and `ls` in one command
+```bash
+cl () {
+    VAL=$1
+    if [ -z "$VAL" ]
+    then
+        VAL=~
+    fi  
+    echo $VAL 
+    cd "$VAL" && shift && ls
+}
+```
+
 Git status alias
 ```bash
 # Git status alias
