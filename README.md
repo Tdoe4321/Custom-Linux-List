@@ -270,3 +270,14 @@ To allow alt not to be used for top bar navigation, search for 'settings' and 'O
 "window.titleBarStyle": "custom",
 "window.customMenuBarAltFocus": false
 ```
+
+Custom todos snippet expansion for C++ CODE `TODO(Tyler): ` - add to snipets -> cpp.json
+```
+"TODO Tyler": {
+    "prefix": "///",
+    "body": [
+        "//TODO(Tyler): $0"
+    ],
+    "description": "Todos for tyler"
+}
+```
