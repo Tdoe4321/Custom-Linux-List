@@ -94,12 +94,18 @@ export LESS_TERMCAP_so=$'\E[01;44;33m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;32m'
 ```
-# Shows current branch
+
+Shows current branch
 ```bash
 parse_git_branch() {
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[01;31m\]$(parse_git_branch)\[\033[00m\]\$ '
+```
+
+Add timestamp to all exectued command
+```bash
+
 ```
 
 ### .vimrc additions
@@ -110,7 +116,9 @@ touch ~/.vimrc
 
 Show line numbers:
 ```bash
-set nu
+# Timestamp
+export OLD_PS1="$PS1"
+export PS1="\[\e[0;32m\]\[\e[0m\]\[\e[0;32m\][\$(date +%F\ %T)]\[\e[0m\] $OLD_PS1"
 ```
 
 
@@ -123,6 +131,7 @@ The aliases below are useful for Git commands.  Note that these must be implemen
     histf = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=iso --name-status
     histc = log --graph --pretty=oneline --abbrev-commit
 ```
+
 
 ### VS Code Keybindings
 Add to keybindings.json & install required extensions
