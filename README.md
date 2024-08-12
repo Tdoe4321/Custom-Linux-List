@@ -105,7 +105,9 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[0
 
 Add timestamp to all exectued command
 ```bash
-
+# Timestamp
+export OLD_PS1="$PS1"
+export PS1="\[\e[0;32m\]\[\e[0m\]\[\e[0;32m\][\$(date +%F\ %T)]\[\e[0m\] $OLD_PS1"
 ```
 
 ### .vimrc additions
@@ -116,9 +118,7 @@ touch ~/.vimrc
 
 Show line numbers:
 ```bash
-# Timestamp
-export OLD_PS1="$PS1"
-export PS1="\[\e[0;32m\]\[\e[0m\]\[\e[0;32m\][\$(date +%F\ %T)]\[\e[0m\] $OLD_PS1"
+set nu
 ```
 
 
